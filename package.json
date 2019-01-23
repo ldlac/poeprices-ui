@@ -1,0 +1,55 @@
+{
+  "name": "PoePrices",
+  "version": "0.0.1",
+  "author": "Louis-David Lacerte",
+  "description": "PoePrices is a universal tool to price check your items in Path of Exile built with Electron and React",
+  "private": true,
+  "main": "public/main.js",
+  "homepage": "./",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-roughly": "^1.0.0",
+    "electron-is-dev": "^0.3.0",
+    "install": "^0.10.1",
+    "lodash.assign": "^4.2.0",
+    "mocha": "^5.0.1",
+    "node-fetch": "^2.1.1",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-icons": "^2.2.7",
+    "react-scripts": "1.0.12",
+    "react-select": "^1.2.1",
+    "spectron": "^3.8.0",
+    "utf8": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "jtest": "mocha",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=build/main.js",
+    "preelectron-pack": "yarn build"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.26.3",
+    "wait-on": "^2.0.2"
+  },
+  "build": {
+    "appId": "com.poeprices",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraResources": []
+  }
+}
